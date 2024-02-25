@@ -127,10 +127,6 @@ router.post("/getlocation", async (req, res) => {
           "&key=74c89b3be64946ac96d777d08b878d43"
       )
       .then(async (res) => {
-        // console.log(`statusCode: ${res.status}`)
-        // console.log(res.data.results)
-        // let response = stringify(res)
-        // response = await JSON.parse(response)
         let response = res.data.results[0].components;
         console.log(response);
         let { village, county, state_district, state, postcode } = response;
@@ -157,9 +153,6 @@ router.post("/getlocation", async (req, res) => {
 });
 router.post("/foodData", async (req, res) => {
   try {
-    // console.log( JSON.stringify(global.foodData))
-    // const userId = req.user.id;
-    // await database.listCollections({name:"food_items"}).find({});
     res.send([global.foodData, global.foodCategory]);
   } catch (error) {
     console.error(error.message);
@@ -177,8 +170,6 @@ router.post("/orderData", async (req, res) => {
   console.log(eId);
   if (eId === null) {
     try {
-      // console.log(data)
-      // console.log("1231242343242354",req.body.email)
       await Order.create({
         email: req.body.email,
         order_data: [data],
@@ -208,7 +199,7 @@ router.post("/myOrderData", async (req, res) => {
   try {
     // console.log(req.body.email)
     let eId = await Order.findOne({ email: req.body.email });
-    //console.log(eId)
+    // console.log(eId);
     res.json({ orderData: eId });
   } catch (error) {
     res.send("Error", error.message);

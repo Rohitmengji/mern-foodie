@@ -1,9 +1,9 @@
 import Delete from "@mui/icons-material/Delete";
 import React, { useEffect, useState } from "react";
 import Card from "../Card";
-// import Carousel from '../components/Carousel'
 import Footer from "../Footer";
 import Navbar from "../Navbar";
+import { baseURL } from "../../lib/index";
 
 const getUniqueCategories = (items) => {
   const categories = items.map((item) => item.CategoryName);
@@ -22,7 +22,7 @@ export default function Home() {
   }, {});
 
   const loadFoodItems = async () => {
-    let response = await fetch("http://localhost:5000/api/auth/foodData", {
+    let response = await fetch(`${baseURL}/api/auth/foodData`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

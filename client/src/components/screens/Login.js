@@ -1,13 +1,15 @@
 import React, { useState } from "react";
 import Navbar from "../Navbar";
 import { useNavigate, Link } from "react-router-dom";
+import { baseURL } from "../../lib/index";
+
 export default function Login() {
   const [credentials, setCredentials] = useState({ email: "", password: "" });
   let navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const response = await fetch("http://localhost:5000/api/auth/login", {
+    const response = await fetch(`${baseURL}/api/auth/login`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -18,7 +20,7 @@ export default function Login() {
       }),
     });
     const json = await response.json();
-    console.log(json);
+    // console.log(json);
     if (json.success) {
       //save the auth toke to local storage and redirect
       localStorage.setItem("userEmail", credentials.email);
