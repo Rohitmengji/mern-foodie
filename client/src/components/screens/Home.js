@@ -24,6 +24,7 @@ export default function Home() {
   const loadFoodItems = async () => {
     let response = await fetch(`${baseURL}/api/auth/foodData`, {
       method: "POST",
+      mode: "no-cors",
       headers: {
         "Content-Type": "application/json",
       },
