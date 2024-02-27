@@ -41,7 +41,7 @@ global.foodData = require("./db")(function call(err, data, CatData) {
 // allow origin
 const allowedOrigins = [
   "http://localhost:3000",
-  "https://main.d24ftgozfg99e9.amplifyapp.com",
+  "https://main.d3mptr6n33j4yf.amplifyapp.com",
 ];
 
 app.use((req, res, next) => {
