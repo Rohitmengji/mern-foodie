@@ -19,7 +19,6 @@ export default function Cart() {
 
     let response = await fetch(`${baseURL}/api/auth/orderData`, {
       method: "POST",
-      mode: "no-cors",
       headers: {
         "Content-Type": "application/json",
       },
