@@ -13,7 +13,7 @@ const getUniqueCategories = (items) => {
 export default function Home() {
   const [foodItems, setFoodItems] = useState([]);
   const [search, setSearch] = useState("");
-  
+
   const foodItemsByCategory = foodItems.reduce((acc, item) => {
     if (!acc[item.CategoryName]) {
       acc[item.CategoryName] = [];
@@ -25,7 +25,6 @@ export default function Home() {
   const loadFoodItems = async () => {
     let response = await fetch(`${baseURL}/api/auth/foodData`, {
       method: "POST",
-       mode: "no-cors",
       headers: {
         "Content-Type": "application/json",
       },
