@@ -16,11 +16,11 @@ function App() {
     <CartProvider>
         <div>
           <Routes>
-            <Route exact path="/" element={<Home />} />
+            <Route exact path="/home" element={<Home />} />
             <Route exact path="/login" element={<Login />} />
             <Route exact path="/signup" element={<SignUp />} />
             <Route exact path="/myorder" element={<MyOrder />} />
-            <Route exact path="/landingpage" element={<LandingPage />} />
+            <Route exact path="/" element={<LandingPage />} />
             <Route exact path="/contactus" element={<ContactForm />} />
           </Routes>
         </div>
