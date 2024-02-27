@@ -1,4 +1,4 @@
-const dev = "http://localhost:5000";
+const dev = "https://mern-foodie.onrender.com";
 
 
 export const baseURL = dev;
