@@ -56,7 +56,7 @@ export default function Navbar() {
                 <Link
                   className='nav-link fs-5 mx-3 active'
                   aria-current='page'
-                  to='/'
+                  to='/home'
                 >
                   Home
                 </Link>{" "}
