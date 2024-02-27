@@ -11,6 +11,7 @@ export default function Login() {
     e.preventDefault();
     const response = await fetch(`${baseURL}/api/auth/login`, {
       method: "POST",
+       mode: "no-cors",
       headers: {
         "Content-Type": "application/json",
       },
