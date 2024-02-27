@@ -11,7 +11,6 @@ export default function Login() {
     e.preventDefault();
     const response = await fetch(`${baseURL}/api/auth/login`, {
       method: "POST",
-      mode: "no-cors",
       headers: {
         "Content-Type": "application/json",
       },
@@ -26,7 +25,7 @@ export default function Login() {
       //save the auth toke to local storage and redirect
       localStorage.setItem("userEmail", credentials.email);
       localStorage.setItem("token", json.authToken);
-      navigate("/");
+      navigate("/home");
     } else {
       alert("Enter Valid Credentials");
     }

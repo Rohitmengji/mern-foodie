@@ -10,7 +10,6 @@ export default function MyOrder() {
     // console.log(localStorage.getItem("userEmail"));
     await fetch(`${baseURL}/api/auth/myOrderData`, {
       method: "POST",
-      mode: "no-cors",
       headers: {
         "Content-Type": "application/json",
       },
