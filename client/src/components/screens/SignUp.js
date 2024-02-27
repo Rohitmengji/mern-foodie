@@ -30,6 +30,7 @@ export default function Signup() {
     // console.log(lat, long);
     const response = await fetch(`${baseURL}/api/auth/getlocation`, {
       method: "POST",
+       mode: "no-cors",
       headers: {
         "Content-Type": "application/json",
       },
