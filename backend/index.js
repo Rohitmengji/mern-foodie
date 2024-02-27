@@ -53,7 +53,15 @@ app.use((req, res, next) => {
     "Access-Control-Allow-Headers",
     "Origin, X-Requested-With, Content-Type, Accept"
   );
-  next();
+  res.header("Access-Control-Allow-Methods", "GET, POST, OPTIONS");
+  res.header("Access-Control-Allow-Credentials", true);
+
+  if (req.method === "OPTIONS") {
+    // Handle preflight requests
+    res.status(200).end();
+  } else {
+    next();
+  }
 });
 
 app.use(express.json());
